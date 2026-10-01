@@ -1,0 +1,295 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --fundo: #f5f5f5;
+    --fundo-card: #ffffff;
+    --texto: #222222;
+    --texto-secundario: #666666;
+    --principal: #d90429;
+    --principal-hover: #b90322;
+    --borda: #dddddd;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--fundo);
+    color: var(--texto);
+    transition: 0.3s;
+}
+
+
+/* DARK MODE */
+
+body.dark {
+    --fundo: #111111;
+    --fundo-card: #1e1e1e;
+    --texto: #ffffff;
+    --texto-secundario: #bbbbbb;
+    --principal: #ff1744;
+    --principal-hover: #d50032;
+    --borda: #333333;
+}
+
+
+/* HEADER */
+
+header {
+    background-color: var(--fundo-card);
+    border-bottom: 1px solid var(--borda);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+nav {
+    max-width: 1200px;
+    margin: auto;
+    padding: 18px 20px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav h1 {
+    color: var(--principal);
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.menu a {
+    text-decoration: none;
+    color: var(--texto);
+    font-weight: bold;
+}
+
+.menu a:hover {
+    color: var(--principal);
+}
+
+
+/* BOTÃO DARK MODE */
+
+#darkMode {
+    border: none;
+    background-color: var(--texto);
+    color: var(--fundo);
+    padding: 9px 14px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+
+/* HERO */
+
+.hero {
+    min-height: 500px;
+
+    display: flex;
+    align-items: center;
+
+    padding: 60px 10%;
+
+    background:
+        linear-gradient(rgba(0, 0, 0, 0.55),
+            rgba(0, 0, 0, 0.55)),
+        url("https://images.unsplash.com/photo-1503376780353-7e6692767b70") center / cover;
+}
+
+.hero-text {
+    max-width: 550px;
+    color: white;
+}
+
+.hero h2 {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 20px;
+    margin-bottom: 30px;
+}
+
+
+/* BOTÕES */
+
+.btn,
+.btn-comprar {
+    border: none;
+    background-color: var(--principal);
+    color: white;
+    padding: 12px 22px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.btn {
+    text-decoration: none;
+    display: inline-block;
+}
+
+.btn:hover,
+.btn-comprar:hover {
+    background-color: var(--principal-hover);
+}
+
+
+/* CARROS */
+
+.carros {
+    max-width: 1200px;
+    margin: 70px auto;
+    padding: 0 20px;
+}
+
+.carros>h2,
+.sobre>h2,
+.contato>h2 {
+    text-align: center;
+    margin-bottom: 35px;
+    font-size: 32px;
+}
+
+.carros-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.card {
+    background-color: var(--fundo-card);
+    border: 1px solid var(--borda);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.carro-img {
+    height: 200px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: #dddddd;
+
+    font-size: 80px;
+}
+
+.card-info {
+    padding: 20px;
+}
+
+.card-info h3 {
+    margin-bottom: 10px;
+}
+
+.card-info p {
+    color: var(--texto-secundario);
+    margin-bottom: 15px;
+}
+
+.card-info strong {
+    display: block;
+    font-size: 22px;
+    margin-bottom: 20px;
+}
+
+
+/* SOBRE */
+
+.sobre {
+    max-width: 1200px;
+    margin: 70px auto;
+    padding: 50px 20px;
+}
+
+.beneficios {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    text-align: center;
+}
+
+.beneficios div {
+    background-color: var(--fundo-card);
+    padding: 30px;
+    border-radius: 10px;
+    border: 1px solid var(--borda);
+}
+
+.beneficios span {
+    color: var(--principal);
+    font-size: 30px;
+}
+
+.beneficios h3 {
+    margin: 15px 0 10px;
+}
+
+.beneficios p {
+    color: var(--texto-secundario);
+}
+
+
+/* CONTATO */
+
+.contato {
+    text-align: center;
+    padding: 70px 20px;
+    background-color: var(--fundo-card);
+}
+
+.contato p {
+    color: var(--texto-secundario);
+    margin-bottom: 25px;
+}
+
+
+/* FOOTER */
+
+footer {
+    background-color: #111;
+    color: white;
+    text-align: center;
+    padding: 25px;
+}
+
+
+/* RESPONSIVIDADE */
+
+@media (max-width: 800px) {
+
+    nav {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .menu {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .hero h2 {
+        font-size: 35px;
+    }
+
+    .carros-container,
+    .beneficios {
+        grid-template-columns: 1fr;
+    }
+}
